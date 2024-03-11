@@ -1,4 +1,6 @@
-﻿namespace csharp
+﻿using csharp.Models;
+
+namespace csharp.Strategies
 {
     public class BackstagePassStrategy : ItemStrategy
     {

@@ -1,4 +1,7 @@
-﻿namespace csharp
+﻿using csharp.Models;
+using csharp.Strategies;
+
+namespace csharp.Factories
 {
     public static class ItemStrategyFactory
     {

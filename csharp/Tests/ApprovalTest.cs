@@ -1,5 +1,6 @@
 ﻿using ApprovalTests;
 using ApprovalTests.Reporters;
+using csharp.Models;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Text;

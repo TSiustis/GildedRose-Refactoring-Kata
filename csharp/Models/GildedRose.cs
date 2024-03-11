@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using csharp.Factories;
 
-namespace csharp
+namespace csharp.Models
 {
     public class GildedRose
     {

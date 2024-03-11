@@ -1,4 +1,6 @@
-﻿namespace csharp;
+﻿using csharp.Models;
+
+namespace csharp.Strategies;
 public class AgedBrieStrategy : ItemStrategy
 {
     public AgedBrieStrategy(Item item) : base(item)
