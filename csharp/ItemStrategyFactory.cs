@@ -1,14 +1,17 @@
-﻿namespace csharp;
-public static class ItemStrategyFactory
+﻿namespace csharp
 {
-    public static ItemStrategy GetStrategy(Item item)
+    public static class ItemStrategyFactory
     {
-        return item.Name switch
+        public static ItemStrategy GetStrategy(Item item)
         {
-            string agedBrie when agedBrie.Contains("Aged Brie") => new AgedBrieStrategy(item),
-            string backstagePass when backstagePass.Contains("Backstage pass") => new BackstagePassStrategy(item),
-            string sulfuras when sulfuras.Contains("Sulfuras") => new SulfurasStrategy(item),
-            _ => new NormalItemStrategy(item),
-        };
+            return item.Name switch
+            {
+                string agedBrie when agedBrie.Contains("Aged Brie") => new AgedBrieStrategy(item),
+                string backstagePass when backstagePass.Contains("Backstage pass") => new BackstagePassStrategy(item),
+                string conjured when conjured.Contains("Conjured") => new ConjuredStrategy(item),
+                string sulfuras when sulfuras.Contains("Sulfuras") => new SulfurasStrategy(item),
+                _ => new NormalItemStrategy(item),
+            };
+        }
     }
 }

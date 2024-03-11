@@ -1,29 +1,31 @@
-﻿namespace csharp;
-public class BackstagePassStrategy : ItemStrategy
+﻿namespace csharp
 {
-    public BackstagePassStrategy(Item item) : base(item)
+    public class BackstagePassStrategy : ItemStrategy
     {
-    }
-
-    public override void Update()
-    {
-        IncreaseQuality();
-
-        if (Item.SellIn <= 10)
+        public BackstagePassStrategy(Item item) : base(item)
         {
-            IncreaseQuality();
         }
 
-        if (Item.SellIn <= 5)
+        public override void Update()
         {
             IncreaseQuality();
-        }
 
-        DecreaseSellIn();
+            if (Item.SellIn <= 10)
+            {
+                IncreaseQuality();
+            }
 
-        if (Item.SellIn < 0)
-        {
-            Item.Quality = 0;
+            if (Item.SellIn <= 5)
+            {
+                IncreaseQuality();
+            }
+
+            DecreaseSellIn();
+
+            if (Item.SellIn < 0)
+            {
+                Item.Quality = 0;
+            }
         }
     }
 }

@@ -1,32 +1,34 @@
-﻿namespace csharp;
-public abstract class ItemStrategy
+﻿namespace csharp
 {
-    protected Item Item;
-    public ItemStrategy(Item item)
+    public abstract class ItemStrategy
     {
-        Item = item;
-    }
-
-    public abstract void Update();
-
-    protected void DecreaseSellIn()
-    {
-        Item.SellIn--;
-    }
-
-    protected void IncreaseQuality()
-    {
-        if (Item.Quality < 50)
+        protected Item Item;
+        public ItemStrategy(Item item)
         {
-            Item.Quality++;
+            Item = item;
         }
-    }
 
-    protected void DecreaseQuality()
-    {
-        if (Item.Quality > 0)
+        public abstract void Update();
+
+        protected void DecreaseSellIn()
         {
-            Item.Quality--;
+            Item.SellIn--;
+        }
+
+        protected void IncreaseQuality()
+        {
+            if (Item.Quality < 50)
+            {
+                Item.Quality++;
+            }
+        }
+
+        protected void DecreaseQuality()
+        {
+            if (Item.Quality > 0)
+            {
+                Item.Quality--;
+            }
         }
     }
 }

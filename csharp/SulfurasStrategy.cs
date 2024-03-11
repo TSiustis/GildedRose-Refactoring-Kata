@@ -1,11 +1,13 @@
-﻿namespace csharp;
-public class SulfurasStrategy : ItemStrategy
+﻿namespace csharp
 {
-    public SulfurasStrategy(Item item) : base(item)
+    public class SulfurasStrategy : ItemStrategy
     {
-    }
-    public override void Update()
-    {
-        // Sulfuras does not change
+        public SulfurasStrategy(Item item) : base(item)
+        {
+        }
+        public override void Update()
+        {
+            // Sulfuras does not change
+        }
     }
 }
