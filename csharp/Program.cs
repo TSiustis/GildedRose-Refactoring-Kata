@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using csharp.Constants;
 using csharp.Models;
 
 namespace csharp
@@ -10,67 +11,64 @@ namespace csharp
         {
             Console.WriteLine("OMGHAI!");
 
-            var items = new List<Item>{
+            IList<Item> Items = new List<Item>{
                 new() {
-                    Name = "+5 Dexterity Vest",
+                    Name = ItemConstants.DexterityVest,
                     SellIn = 10,
                     Quality = 20
                 },
                 new() {
-                    Name = "Aged Brie", 
+                    Name = ItemConstants.AgedBrie,
                     SellIn = 2,
                     Quality = 0
                 },
                 new() {
-                    Name = "Elixir of the Mongoose",
+                    Name = ItemConstants.ElixirOfTheMongoose,
                     SellIn = 5,
                     Quality = 7
                 },
                 new() {
-                    Name = "Sulfuras, Hand of Ragnaros",
+                    Name = ItemConstants.Sulfuras,
                     SellIn = 0,
                     Quality = 80
                 },
                 new() {
-                    Name = "Sulfuras, Hand of Ragnaros", 
+                    Name = ItemConstants.Sulfuras,
                     SellIn = -1,
                     Quality = 80
                 },
                 new() {
-                    Name = "Backstage passes to a TAFKAL80ETC concert",
+                    Name = ItemConstants.BackstagePass,
                     SellIn = 15,
                     Quality = 20
                 },
                 new() {
-                    Name = "Backstage passes to a TAFKAL80ETC concert",
+                    Name = ItemConstants.BackstagePass,
                     SellIn = 10,
                     Quality = 49
                 },
                 new() {
-                    Name = "Backstage passes to a TAFKAL80ETC concert",
+                    Name = ItemConstants.BackstagePass,
                     SellIn = 5,
                     Quality = 49
                 },
-				new() {
-                    Name = "Conjured Mana Cake",
+                new() {
+                    Name = ItemConstants.ConjuredManaCake,
                     SellIn = 3,
                     Quality = 6
                 }
             };
 
-            var app = new GildedRose(items);
-
+            var app = new GildedRose(Items);
 
             for (var i = 0; i < 31; i++)
             {
                 Console.WriteLine("-------- day " + i + " --------");
                 Console.WriteLine("name, sellIn, quality");
-                
-                for (var j = 0; j < items.Count; j++)
+                for (var j = 0; j < Items.Count; j++)
                 {
-                    Console.WriteLine(items[j]);
+                    System.Console.WriteLine(Items[j]);
                 }
-
                 Console.WriteLine("");
                 app.UpdateQuality();
             }
