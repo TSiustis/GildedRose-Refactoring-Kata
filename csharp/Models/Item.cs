@@ -8,7 +8,7 @@
 
         public override string ToString()
         {
-            return Name + ", " + SellIn + ", " + Quality;
+            return this.Name + ", " + this.SellIn + ", " + this.Quality;
         }
     }
 }

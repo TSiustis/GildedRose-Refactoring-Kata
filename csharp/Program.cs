@@ -11,7 +11,7 @@ namespace csharp
         {
             Console.WriteLine("OMGHAI!");
 
-            IList<Item> Items = new List<Item>{
+            var items = new List<Item>{
                 new() {
                     Name = ItemConstants.DexterityVest,
                     SellIn = 10,
@@ -59,15 +59,15 @@ namespace csharp
                 }
             };
 
-            var app = new GildedRose(Items);
+            var app = new GildedRose(items);
 
             for (var i = 0; i < 31; i++)
             {
                 Console.WriteLine("-------- day " + i + " --------");
                 Console.WriteLine("name, sellIn, quality");
-                for (var j = 0; j < Items.Count; j++)
+                for (var j = 0; j < items.Count; j++)
                 {
-                    System.Console.WriteLine(Items[j]);
+                    Console.WriteLine(items[j]);
                 }
                 Console.WriteLine("");
                 app.UpdateQuality();
